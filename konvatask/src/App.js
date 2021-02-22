@@ -1,19 +1,25 @@
-import React from "react";
-import { Stage, Layer, Circle } from "react-konva";
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import { Stage, Layer, Image } from 'react-konva';
+import useImage from 'use-image';
 
-export default function App() {
-  return (
-    <Stage width={window.innerWidth} height={window.innerHeight}>
-      <Layer>
-        <Circle
-          x={100}
-          y={100}
-          width={100}
-          height={100}
-          
-          shadowBlur={1}
-        />
-      </Layer>
-    </Stage>
-  );
+// the first very simple and recommended way:
+const LionImage = () => {
+  const [image] = useImage('http://128.199.244.46:4000/getimage?image=inferNone94323.jpeg');
+  return <Image image={image} />;
+};
+
+
+class App extends Component {
+  render() {
+    return (
+      <Stage width={360} height={438}>
+        <Layer>
+          <LionImage />
+        </Layer>
+      </Stage>
+    );
+  }
 }
+
+export default App;
