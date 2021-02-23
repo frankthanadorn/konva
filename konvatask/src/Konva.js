@@ -59,7 +59,7 @@ export default class Canvas extends Component {
       <Circle
         x={200}
         y={200}
-        radius={50}
+        radius={30}
         fill="red"
         stroke="black"
         strokeWidth={4}
